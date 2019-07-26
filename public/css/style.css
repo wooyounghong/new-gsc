@@ -276,11 +276,11 @@ body {
       background-color: #fff; }
     .card__side--back {
       transform: rotateY(180deg);
-      color: white; }
+      color: white;
+      font-size: 1.2vw;
+      padding: 5%; }
       .card__side--back-1 {
-        background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-        font-size: 1.2vw;
-        padding: 5%; }
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
       .card__side--back-2 {
         background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
       .card__side--back-3 {
@@ -302,9 +302,13 @@ body {
       background-size: contain;
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/cloud-adoption.jpg); }
     .card__picture--2 {
-      background-image: url(../img/cloud-adoption.jpg); }
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/cloud-adoption.jpg); }
     .card__picture--3 {
-      background-image: url(../img/cloud-adoption.jpg); }
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/cloud-adoption.jpg); }
   .card__heading {
     padding-top: 2.8rem;
     font-weight: 300;
