@@ -2,9 +2,35 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
+$color-grey-light-1: #f7f7f7;
+$color-black: black;
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+// Utility
+.u-center-text {
+  text-align: center;
+}
+.u-right-text {
+  text-align: right;
+}
+// .u-margin-bottom-8 {
+//   margin-bottom: 8rem;
+// }
+
+// mixin file
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
 
 /* Universal Selector */
-
+html {
+  height: 100%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +52,7 @@ body {
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg); /* green changes color from light green to dark green*/
+    url(../img/about-us.jpg); /* green changes color from light green to dark green*/
   background-size: cover; /* whatever view port the element is, it will try to fit inside the box*/
   background-position: top; /*whatever the viewport size, the image stays on top*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /**/
@@ -176,4 +202,124 @@ body {
 .btn-animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+
+// About Us page css
+
+.about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /**/
+}
+
+.about-heading--secondary {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+// Float grid
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  // background-color: red;
+  justify-content: center;
+  align-items: center;
+}
+// .grid-container-text {
+//   background-color: red;
+// }
+
+// .grid-container > div {
+//   flex: 2 1 auto;
+//   // border: 1px red solid;
+//   text-align: center;
+//   margin: 100px; /* and that, will result in a 10px gap */
+//   // margin-left: 100px;
+//   // margin-right: 0px;
+// }
+
+// .grid-container-text {
+//   font-size: 1.75vw;
+//   color: #777;
+// }
+
+.row {
+  max-width: 114rem;
+  // background-color: #eee;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+  @include clearfix();
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    // background-color: orangered;
+    float: right;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+}
+.paragraph-about {
+  font-size: 1.5vw;
+  margin-left: 50px;
+  vertical-align: middle;
+  // position: relative;
+  // top: 50%;
+  // transform: translateY(20%);
+  max-width: 100%;
+  max-height: 100vh;
+  // display: grid;
+  // height: 100%;
+}
+.about-image {
+  // height: 250px;
+  // width: 200vh;
+  display: block; /* removes bottom margin/whitespace */
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  max-width: 100%; /* horizontally responsive */
+  max-height: 55vh; /* vertically responsive */
+  // margin-left: 20px;
+  border-radius: 50%;
+}
+
+.services {
+  padding: 25rem 0;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/about-us.jpg); /* green changes color from light green to dark green*/
+  background-size: cover; /* whatever view port the element is, it will try to fit inside the box*/
+  background-position: top; /*whatever the viewport size, the image stays on top*/
+  // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /**/
+  transform: skewY(-7deg);
+  // position: relative;
+  margin-top: -10rem;
+  & > * {
+    transform: skewY(7deg);
+  }
 }
