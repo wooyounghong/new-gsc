@@ -403,7 +403,7 @@ body {
     backface-visibility: hidden;
     border-radius: 20%;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-    overflow: auto;
+    overflow: hidden;
     // font-size: 1rem;
     &--front {
       background-color: $color-white;
