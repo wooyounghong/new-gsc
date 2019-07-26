@@ -304,7 +304,7 @@ body {
     .card__picture--2 {
       background-repeat: no-repeat;
       background-size: contain;
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/cloud-adoption.jpg); }
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/cloud-adoption.jpg); }
     .card__picture--3 {
       background-repeat: no-repeat;
       background-size: contain;
@@ -321,3 +321,5 @@ body {
     width: 75%; }
   .card__heading-span--1 {
     background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card__heading-span--2 {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
